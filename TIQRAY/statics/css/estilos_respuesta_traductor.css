@@ -1,0 +1,36 @@
+.Container_respuesta_traductor{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.Ordenador_respuesta_traductor{
+    margin-top: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.Ordenador_respuesta_traductor p{
+    color: white;
+    margin: 5px auto;
+}
+
+
+.Mostrar_busqueda_traductor table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.Mostrar_busqueda_traductor table, td, th {
+    border: 1px solid #09bda5;
+    text-align: center;
+  }
+.Mostrar_busqueda_traductor table th{
+      color: #bd0960;
+}
+.Mostrar_busqueda_traductor table td{
+    color: rgb(218, 212, 212);
+}
+.Mensaje_error_busqueda{
+    color:#178d7d;
+}

@@ -1,0 +1,23 @@
+{% extends "TEMPLATE_DICCIONARIO/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %} AlimentadorDB {%  endblock %}
+{% block content %}
+
+<div id="Ingresardb_container">
+    <div class="Ingresardb_formularios">
+            {% if Palabarasdb_Campos.errors %}
+            <div class="alert alert-danger" role="alert">
+                A simple danger alert—check it out!
+            </div>
+            {% else %}
+                <h1 style="color: #f50d7d"> Alimentar Base de Datos</h1>
+                <form action="{% url 'IngresarDiccionario' %}" method="POST">
+                    {% csrf_token %}
+                    {{Palabarasdb_Campos|crispy}}
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            {% endif %}
+    </div>
+</div>
+{% endblock %}

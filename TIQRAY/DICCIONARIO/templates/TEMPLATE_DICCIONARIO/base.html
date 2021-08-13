@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title> TIQRAY - {% block title %} {% endblock %}</title> </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos_ingresardb.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos_traductor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos_respuesta_traductor.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxs-home' ></i>
+        <div class="logo_name">Tiqray</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <!--
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+        -->
+      <li>
+        <a href="{% url 'Diccionario'%}">
+          <i class='bx bxs-message'></i>
+          <span class="links_name">Traductor</span>
+        </a>
+         <span class="tooltip">Traductor</span>
+      </li>
+      <li>
+       <a href="{% url 'IngresarDiccionario'%}">
+        <i class='bx bxs-book-heart' ></i>
+         <span class="links_name">Añadir Diccionario</span>
+       </a>
+       <span class="tooltip">Añadir Diccionario</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bxs-briefcase'></i>
+         <span class="links_name">Servicios</span>
+       </a>
+       <span class="tooltip">Servicios</span>
+     </li>
+
+     <li class="profile">
+         <div class="profile-details">
+           
+           <div class="name_job">
+             <div class="name">Alex Pimentel</div>
+             <div class="job">Telecommunication Engineer</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+<!-- Parte Cambiante-->
+  <section class="home-section">
+    {% block content %}
+    {% endblock %}
+  </section>
+<!-- Parte Cambiante-->
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

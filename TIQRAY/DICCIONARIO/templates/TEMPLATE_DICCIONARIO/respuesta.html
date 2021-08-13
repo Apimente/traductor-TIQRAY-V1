@@ -1,0 +1,37 @@
+
+{% extends "TEMPLATE_DICCIONARIO/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %} AlimentadorDB {%  endblock %}
+{% block content %}
+<div class="Container_respuesta_traductor">
+    <div class="Ordenador_respuesta_traductor">
+        <p>Palabra Buscada : <strong style="color: #bd0960;">{{query}}</strong> </p>
+        <div class="Mostrar_busqueda_traductor">
+            {% if palbraQuechua %}
+                <p>Coencidencias encontradas: <strong style="color: #bd0960;">{{palbraQuechua|length}}</strong> palabras</p>
+
+                <table>
+                    <tr class="Coencidencias_Columnas">
+                        <th>Qechua</th>
+                        <th>Traduccion</th>
+                        <th>Contexto de uso</th>
+                    </tr>
+                    {% for palabra in palbraQuechua %}
+                        <tr class="Coencidencias_filas">
+                            
+                                <td>{{palabra.palabradb_quechua}}</td>
+                                <td>{{palabra.palabradb_esp}}</td>
+                                <td>{{palabra.palabradb_ejemplo_uso}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <div class="alert alert-danger">
+                    <label class="Mensaje_error_busqueda">No se encontro ninguna coencidencia</label>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

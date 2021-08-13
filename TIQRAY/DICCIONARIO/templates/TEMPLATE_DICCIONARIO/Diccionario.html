@@ -1,0 +1,24 @@
+{% extends "TEMPLATE_DICCIONARIO/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %} Traductor {%  endblock %}
+{% block content %}
+<form class="Formulario_traductor" action="/RespuestaDIC/" method="GET">
+
+  <div class="Formulario_traductor_container">
+    <div id="Ordenador_formulario">
+      <div>
+        <h1>Consultar Palabra en la Base de Datos</h1>
+      </div>
+      <div class="Formulario_buscar_palabra">
+         <label for="floatingTextarea">Palabra en Quechua</label>
+          <input type="text" name="palabra_quechua2">
+      </div>
+      <div>
+        <button type="submit">Buscar Traduccion</button>
+      </div>
+    </div>
+  </div>
+
+</form>
+{% endblock %}
