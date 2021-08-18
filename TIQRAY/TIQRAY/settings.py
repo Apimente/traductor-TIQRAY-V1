@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 from django.contrib.messages import constants as message_constants
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h04nym&3@yd82rk4!sb-ar2_hl$&id0m8!1z3)su5=k40#pmga'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -134,6 +136,9 @@ STATICFILES_DIRS=[
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Clase para lo mensajes flash de BOOTSTRAP
 MESSAGE_TAGS = {
     message_constants.DEBUG : 'debug',
@@ -142,3 +147,6 @@ MESSAGE_TAGS = {
     message_constants.WARNING:'warning',
     message_constants.ERROR:'error',
 }
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
